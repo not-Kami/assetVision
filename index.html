@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plan Interactif RCC 2024</title>
-  <link rel="stylesheet" href="public/style/global.css">
-</head>
-<body>
-  <div id="svg-container">
-    <object id="svg-object" type="image/svg+xml" data="src/RCC_2024.svg"></object>
-  </div>
-  <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan Interactif</title>
+    <link rel="stylesheet" href="public/style/global.css" />
+  </head>
+  <body>
+    <div id="svg-container">
+      <object
+        id="svg-object"
+        type="image/svg+xml"
+        data="src/OCC_RCC_FBMZ.svg"
+      ></object>
+    </div>
+    <div id="info-panel" class="info-panel">
+      <button id="close-btn">Close</button>
+      <div id="info-content">
+        <!-- Les informations sur le bureau seront ajoutées ici -->
+      </div>
+    </div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
