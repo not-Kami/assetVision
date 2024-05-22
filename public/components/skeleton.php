@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    // Header section with burger menu
+
+
     <header>
         <nav>
             <ul>
