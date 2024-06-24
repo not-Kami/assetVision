@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asset Management</title>
+    <link rel="stylesheet" href="public/style/global.css" />
+    <link rel="stylesheet" href="public/style/menu.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button id="menu-toggle" class="material-icons">menu</button>
+    <div id="menu-left" class="menu-left">
+      <div class="menu-content">
+        <div class="profile">
+          <img src="public/img/Logo-AssetVision.png" alt="Logo" />
+          <span>AssetManager<br /><small>Asset Management</small></span>
+        </div>
+        <ul>
+          <li>
+            <a href="#"
+              ><span class="material-icons">dashboard</span>Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-icons">inventory</span>Inventory</a
+            >
+          </li>
+          <li>
+            <a href="#"><span class="material-icons">build</span>Maintenance</a>
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-icons">request_quote</span>Requests</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-icons">assessment</span>Reports</a
+            >
+          </li>
+          <li>
+            <a href="#"><span class="material-icons">settings</span>Settings</a>
+          </li>
+          <li>
+            <a href="#" id="tickets-link"
+              ><span class="material-icons">bug_report</span>Tickets</a
+            >
+          </li>
+        </ul>
+        <div class="menu-bottom">
+          <a href="#"><span class="material-icons">logout</span>Logout</a>
+          <div class="dark-mode">
+            <span>Dark Mode</span>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="svg-container">
+      <object
+        id="svg-object"
+        type="image/svg+xml"
+        data="src/OCC_RCC_FBMZ.svg"
+      ></object>
+      <button id="filter-btn" class="material-icons">filter_list</button>
+    </div>
+    <div id="info-panel" class="info-panel">
+      <button id="close-btn">
+        <span class="material-icons">close</span>
+      </button>
+      <div id="info-content"></div>
+    </div>
+    <div id="tools" class="tools">
+      <button id="zoom-in" class="material-icons">zoom_in</button>
+      <button id="zoom-out" class="material-icons">zoom_out</button>
+    </div>
+    <div id="tickets-panel" class="tickets-panel">
+      <button id="close-tickets-btn">
+        <span class="material-icons">close</span>
+      </button>
+      <div id="tickets-content">
+        <h2>Report a Problem</h2>
+        <form id="ticket-form">
+          <label for="asset-id">Asset ID:</label>
+          <input type="text" id="asset-id" name="asset-id" required />
+
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="public/scripts/svg-setup.js"></script>
+    <script src="public/scripts/info-panel.js"></script>
+    <script src="public/scripts/filter.js"></script>
+    <script src="public/scripts/menu.js"></script>
+    <script src="public/scripts/tools.js"></script>
+    <script src="public/scripts/tickets.js"></script>
+  </body>
+</html>
