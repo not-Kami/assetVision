@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asset Management</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="public/style/global.css" />
     <link rel="stylesheet" href="public/style/menu.css" />
+    <link rel="stylesheet" href="public/style/dashboard.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -21,7 +22,7 @@
         </div>
         <ul>
           <li>
-            <a href="dashboard.html"
+            <a href="#"
               ><span class="material-icons">dashboard</span>Dashboard</a
             >
           </li>
@@ -64,47 +65,68 @@
         </div>
       </div>
     </div>
-    <div id="svg-container">
-      <object
-        id="svg-object"
-        type="image/svg+xml"
-        data="src/OCC_RCC_FBMZ.svg"
-      ></object>
-      <button id="filter-btn" class="material-icons">filter_list</button>
-    </div>
-    <div id="info-panel" class="info-panel">
-      <button id="close-btn">
-        <span class="material-icons">close</span>
-      </button>
-      <div id="info-content"></div>
-    </div>
-    <div id="tools" class="tools">
-      <button id="zoom-in" class="material-icons">zoom_in</button>
-      <button id="zoom-out" class="material-icons">zoom_out</button>
-    </div>
-    <div id="tickets-panel" class="tickets-panel">
-      <button id="close-tickets-btn">
-        <span class="material-icons">close</span>
-      </button>
-      <div id="tickets-content">
-        <h2>Report a Problem</h2>
-        <form id="ticket-form">
-          <label for="asset-id">Asset ID:</label>
-          <input type="text" id="asset-id" name="asset-id" required />
-
-          <label for="description">Description:</label>
-          <textarea id="description" name="description" required></textarea>
-
-          <button type="submit">Submit</button>
-        </form>
+    <div class="container">
+      <div class="header">
+        <h1>Asset Management Dashboard</h1>
+        <select id="locationDropdown">
+          <option value="bruxelles">OCC Bruxelles</option>
+          <option value="antwerpen">OCC Antwerpen</option>
+          <option value="mons">OCC Mons</option>
+          <option value="gent">OCC Gent</option>
+          <option value="namur">OCC Namur</option>
+        </select>
+      </div>
+      <div class="dashboard">
+        <div class="card total-assets">
+          <h2>Total Assets</h2>
+          <p id="totalAssetsCount">1234</p>
+        </div>
+        <div class="card general-health">
+          <h2>General Health</h2>
+          <div id="healthIndicator">75%</div>
+        </div>
+        <div class="card upcoming-lifecycle">
+          <h2>Upcoming Lifecycle</h2>
+          <table id="upcomingLifecycleTable">
+            <tr>
+              <th>Asset ID</th>
+              <th>Asset Name</th>
+              <th>Event Date</th>
+              <th>Description</th>
+            </tr>
+            <!-- Add rows here -->
+          </table>
+        </div>
+      </div>
+      <div class="assets-list">
+        <h2>Assets List</h2>
+        <table id="assetsTable">
+          <tr>
+            <th>Asset ID</th>
+            <th>Asset Name</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Last Maintenance Date</th>
+            <th>Next Maintenance Date</th>
+          </tr>
+          <!-- Add rows here -->
+        </table>
+      </div>
+      <div class="tickets-progress">
+        <h2>Tickets in Progress</h2>
+        <table id="ticketsTable">
+          <tr>
+            <th>Ticket ID</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Assigned To</th>
+            <th>Created Date</th>
+          </tr>
+          <!-- Add rows here -->
+        </table>
       </div>
     </div>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="public/scripts/svg-setup.js"></script>
-    <script src="public/scripts/info-panel.js"></script>
-    <script src="public/scripts/filter.js"></script>
+    <script src="public/scripts/dropdown.js"></script>
     <script src="public/scripts/menu.js"></script>
-    <script src="public/scripts/tools.js"></script>
-    <script src="public/scripts/tickets.js"></script>
   </body>
 </html>
